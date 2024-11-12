@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../asset/styles/output.css">
   <script src="https://kit.fontawesome.com/f01941449c.js" crossorigin="anonymous"></script>
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <title>Document</title>
 </head>
 
@@ -17,64 +18,10 @@
   </header>
 
   <main class="flex justify-center items-center">
-    <!-- <div class="w-50 bg-gray-100 font-sans">
+    <div class="liba" id="liba" >
 
-      <div class="w-[50%] mx-auto py-8 px-4">
-          <div class="bg-white p-6 rounded-lg shadow-lg">
-              <h1 class="text-3xl font-semibold">John Doe</h1>
-              <p class="text-gray-600">Web Developer</p>
-  
-              <hr class="my-4">
-  
-              <h2 class="text-xl font-semibold mb-2">Summary</h2>
-              <p class="text-gray-700">Experienced web developer with a passion for creating responsive and user-friendly
-                  websites. Proficient in HTML, CSS, JavaScript, and various web development frameworks.</p>
-  
-              <h2 class="text-xl font-semibold mt-4 mb-2">Skills</h2>
-              <ul class="list-disc list-inside text-gray-700">
-                  <li>HTML/CSS</li>
-                  <li>JavaScript</li>
-                  <li>React</li>
-                  <li>Node.js</li>
-                  <li>Responsive Web Design</li>
-              </ul>
-  
-              <h2 class="text-xl font-semibold mt-4 mb-2">Experience</h2>
-              <div class="mb-4">
-                  <h3 class="text-lg font-semibold">Web Developer, ABC Company</h3>
-                  <p class="text-gray-700">Developed and maintained company website, implementing responsive design and
-                      optimizing performance. Collaborated with the design team to create visually appealing web pages.
-                  </p>
-                  <p class="text-gray-600">January 2020 - Present</p>
-              </div>
-  
-              <div class="mb-4">
-                  <h3 class="text-lg font-semibold">Frontend Developer, XYZ Agency</h3>
-                  <p class="text-gray-700">Worked on various client projects, translating design mockups into interactive
-                      web pages. Utilized modern web technologies to ensure cross-browser compatibility.</p>
-                  <p class="text-gray-600">June 2018 - December 2019</p>
-              </div>
-  
-              <h2 class="text-xl font-semibold mt-4 mb-2">Education</h2>
-              <div class="mb-4">
-                  <h3 class="text-lg font-semibold">Bachelor of Science in Computer Science</h3>
-                  <p class="text-gray-700">University of Example</p>
-                  <p class="text-gray-600">Graduated in May 2018</p>
-              </div>
-  
-              <h2 class="text-xl font-semibold mt-4 mb-2">Contact</h2>
-              <ul class="list-disc list-inside text-gray-700">
-                  <li>Email: john.doe@example.com</li>
-                  <li>LinkedIn: <a href="https://www.linkedin.com/in/johndoe"
-                          class="text-blue-500 hover:underline">linkedin.com/in/johndoe</a></li>
-                  <li>Website: <a href="https://www.johndoe.com" class="text-blue-500 hover:underline">johndoe.com</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  
-  </div> -->
-    <div id="formSteppers" class="w-50 min-h-screen flex items-center justify-center">
+    </div>
+   <div id="formSteppers" class="w-50 min-h-screen flex items-center justify-center">
       <div class="container mx-auto p-4 relative bg-white rounded-lg shadow ">
         <div class="bg-white rounded-lg shadow-lg p-6 md:p-10 max-w-3xl mx-auto">
           <h1 class="text-3xl font-bold text-center mb-8">CV Builder Steps</h1>
@@ -85,7 +32,7 @@
               <span
                 class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-green-200"
                 id="step1">
-                step1
+                <i class="fa-solid fa-user"></i>              
               </span>
               <span
                 class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-green-200 opacity-50"
@@ -100,7 +47,7 @@
               <span
                 class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-green-200 opacity-50"
                 id="step4">
-                step4
+                <i class="fas fa-language"></i>
               </span><span
                 class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-green-200 opacity-50"
                 id="step5">
@@ -112,11 +59,11 @@
               </span><span
                 class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-green-200 opacity-50"
                 id="step7">
-                step7
+                <i class="fa-solid fa-briefcase"></i>
               </span><span
                 class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-blue-600 bg-green-200 opacity-50"
                 id="step8">
-                step8
+                <i class="fas fa-certificate"></i>
               </span>
             </div>
             <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-green-200">
@@ -128,10 +75,11 @@
 
           <!-- Form Steps -->
           <form id="multi-step-form">
+
             <!-- Step 1: Personal Information -->
-            <div id="step-1" class="flex flex-col justify-center hidden">
+            <div id="step-1" class="step flex flex-col justify-center">
               <div class="relative w-full mb-10">
-                <input type="file" class="mb-6">
+                <input type="file" id="img" class="mb-6">
               </div>
               <div class="">
                 <label for="fullName" class="block mb-2 text-sm font-medium text-gray-900">Full Name</label>
@@ -153,15 +101,15 @@
                   required>
               </div>
               <div class="mb-6">
-                <label for="adresse" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
-                <input type="tel" id="phone"
+                <label for="address" class="block mb-2 text-sm font-medium text-gray-900">Address</label>
+                <input type="tel" id="address"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   required>
               </div>
 
               <div class="mb-6">
                 <label for="LinkedIn" class="block mb-2 text-sm font-medium text-gray-900">LinkedIn</label>
-                <input type="text" id="phone"
+                <input type="text" id="LinkedIn"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   required>
               </div>
@@ -193,16 +141,16 @@
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   id="textarea" required></textarea>
               </div>
-            </div>
-            <!-- Step 3: Compétences techniques et soft skills -->
-            <div id="step-3" class="step">
+            </div> 
+            <!-- Step 3: Compétences techniques et soft skills-->
+            <div id="step-3" class="step hidden">
               <h2>Compétences techniques et soft skills</h2>
               <div class="mb-6">
                 <div class="flex-col items-center mb-4">
-                  <label for="titre" class="ml-2 text-sm font-medium text-gray-900">hard-skills</label>
-                  <div class="flex gap-40 ">
-                    <input type="text" id="titre"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
+                  <label for="hardSkills" class="ml-2 text-sm font-medium text-gray-900">hard-skills</label>
+                  <div id="hardSkillsDiv" class="flex-col gap-40 ">
+                    <input type="text" id="hardSkills"
+                      class="hardS bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                       required> <button><i class="fa-solid fa-circle-plus"></i></button>
                   </div>
                 </div>
@@ -218,127 +166,84 @@
               </div>
 
             </div>
-            <!-- Step 4: Langues -->
-            <div id="step-4" class="step hidden">
+            <!-- Step 4: Langues
+            <!-- <div id="step-4" class="step hidden">
               <h2>Langues</h2>
               <div class="mb-6">
                 <div class="flex-col items-center mb-4">
-                  <label for="titre" class="ml-2 text-sm font-medium text-gray-900">hard-skills</label>
+                  <label for="langues" class="ml-2 text-sm font-medium text-gray-900">Langues</label>
                   <div class="flex gap-40 ">
-                    <input type="text" id="titre"
+                    <input type="text" id="langues"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
                       required> <button><i class="fa-solid fa-circle-plus"></i></button>
                   </div>
                 </div>
-                <h2></h2>
-                <div class="flex-col items-center">
-                  <label for="softSkills" class="ml-2 text-sm font-medium text-gray-900">soft-skills</label>
-                  <div class="flex items-center">
-                    <input type="text" id="softSkills"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                      required><button><i class="fa-solid fa-circle-plus"></i></button>
-                  </div>
-                </div>
               </div>
-            </div>
+            </div> -->
             <!-- Step 5: Loisirs et intérêts -->
-            <div id="step-5" class="step hidden">
+            <!-- <div id="step-5" class="step hidden">
               <h2>Loisirs et intérêts</h2>
               <div class="mb-6">
                 <div class="flex-col items-center mb-4">
-                  <label for="titre" class="ml-2 text-sm font-medium text-gray-900">hard-skills</label>
+                  <label for="loisirs" class="ml-2 text-sm font-medium text-gray-900">Loisirs et intérêts</label>
                   <div class="flex gap-40 ">
-                    <input type="text" id="titre"
+                    <input type="text" id="loisirs"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
                       required> <button><i class="fa-solid fa-circle-plus"></i></button>
                   </div>
                 </div>
-                <h2></h2>
-                <div class="flex-col items-center">
-                  <label for="softSkills" class="ml-2 text-sm font-medium text-gray-900">soft-skills</label>
-                  <div class="flex items-center">
-                    <input type="text" id="softSkills"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                      required><button><i class="fa-solid fa-circle-plus"></i></button>
-                  </div>
-                </div>
               </div>
-            </div>
+            </div> -->
             <!-- Step 6: Cursus universitaire -->
-            <div id="step-6" class="step hidden">
+            <!-- <div id="step-6" class="step hidden">
               <h2>Cursus universitaire</h2>
               <div class="mb-6">
                 <div class="flex-col items-center mb-4">
-                  <label for="titre" class="ml-2 text-sm font-medium text-gray-900">hard-skills</label>
+                  <label for="CursusUniversitaire" class="ml-2 text-sm font-medium text-gray-900">Cursus
+                    Universitaire</label>
                   <div class="flex gap-40 ">
-                    <input type="text" id="titre"
+                    <input type="text" id="CursusUniversitaire"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
                       required> <button><i class="fa-solid fa-circle-plus"></i></button>
                   </div>
                 </div>
-                <h2></h2>
-                <div class="flex-col items-center">
-                  <label for="softSkills" class="ml-2 text-sm font-medium text-gray-900">soft-skills</label>
-                  <div class="flex items-center">
-                    <input type="text" id="softSkills"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                      required><button><i class="fa-solid fa-circle-plus"></i></button>
-                  </div>
-                </div>
               </div>
-            </div>
+            </div> -->
             <!-- Step 7: Expériences professionnelles -->
-            <div id="step-7" class="step hidden">
+            <!-- <div id="step-7" class="step hidden">
               <h2>Expériences professionnelles</h2>
               <div class="mb-6">
                 <div class="flex-col items-center mb-4">
-                  <label for="titre" class="ml-2 text-sm font-medium text-gray-900">hard-skills</label>
+                  <label for="Experiences" class="ml-2 text-sm font-medium text-gray-900">Expériences
+                    professionnelles</label>
                   <div class="flex gap-40 ">
-                    <input type="text" id="titre"
+                    <input type="text" id="Experiences"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
                       required> <button><i class="fa-solid fa-circle-plus"></i></button>
                   </div>
                 </div>
-                <h2></h2>
-                <div class="flex-col items-center">
-                  <label for="softSkills" class="ml-2 text-sm font-medium text-gray-900">soft-skills</label>
-                  <div class="flex items-center">
-                    <input type="text" id="softSkills"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                      required><button><i class="fa-solid fa-circle-plus"></i></button>
-                  </div>
-                </div>
               </div>
-            </div>
+            </div> -->
             <!-- Step 8: Certifications -->
-            <div id="step-8" class="step hidden">
+            <!-- <div id="step-8" class="step hidden">
               <h2>Certifications</h2>
               <div class="mb-6">
                 <div class="flex-col items-center mb-4">
-                  <label for="titre" class="ml-2 text-sm font-medium text-gray-900">hard-skills</label>
+                  <label for="Certifications" class="ml-2 text-sm font-medium text-gray-900">Certifications</label>
                   <div class="flex gap-40 ">
-                    <input type="text" id="titre"
+                    <input type="text" id="Certifications"
                       class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
                       required> <button><i class="fa-solid fa-circle-plus"></i></button>
                   </div>
                 </div>
-                <h2></h2>
-                <div class="flex-col items-center">
-                  <label for="softSkills" class="ml-2 text-sm font-medium text-gray-900">soft-skills</label>
-                  <div class="flex items-center">
-                    <input type="text" id="softSkills"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                      required><button><i class="fa-solid fa-circle-plus"></i></button>
-                  </div>
-                </div>
               </div>
-            </div>
+            </div> -->
 
             <div class="flex justify-between mt-8">
               <button type="button" id="prevBtn"
-                class="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 focus:outline-none focus:shadow-outline none" onclick="prevStep()">Previous</button>
+                class="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 focus:outline-none focus:shadow-outline none">Previous</button>
               <button type="button" id="nextBtn"
-                class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline" onclick="nextStep()">Next</button>
+                class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline">Next</button>
               <button type="submit" id="submitBtn"
                 class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline hidden">Submit</button>
             </div>
@@ -352,25 +257,166 @@
 
   <script>
 
-    let prevBtn =document.getElementById("prevBtn");
-    let nextBtn =document.getElementById("nextBtn");
-    let submit =document.getElementById("submit");
-    let multiStepForm = document.getElementById("multi-step-form");
-    let step1=document.getElementById("step-1");
-    let steps = document.querySelectorAll("step");
+let currentStep = 1;
+let prevBtn = document.getElementById("prevBtn");
+let nextBtn = document.getElementById("nextBtn");
+let inputdynamicForm = document.getElementById("inputdynamicForm");
+let steps = document.getElementsByClassName("step");
+let form = document.getElementById('multi-step-form');
+let submitBtn = document.getElementById('submitBtn');
+let progressBar = document.getElementById('progress-bar');
+// let fullName=document.getElementById("fullName").value;
+// let email=document.getElementById("email").value;
+// let phone=document.getElementById("phone").value;
+// let address=document.getElementById("address").value;
+// let LinkedIn=document.getElementById("LinkedIn").value;
+// let GitHub=document.getElementById("GitHub").value;
+// let portfolio=document.getElementById("portfolio").value;
+// let img = document.getElementById("img").value;
 
 
 
-    document.querySelectorAll('.fa-circle-plus').forEach(button => {
-  button.addEventListener('click', function () {
+
+
+// submitBtn.addEventListener("click",function(e){
+//   e.preventDefault();
+
+//   const cvBuilderinfo={
+//     fullName,
+//     email,
+//     phone,
+//     address,
+//     LinkedIn,
+//     GitHub,
+//     portfolio,
+    
+//   }
+
+//   const infos = JSON.parse(localStorage.getItem("infos")) || [];
+//   infos.push(cvBuilderinfo);
+//   localStorage.setItem("infos",JSON.stringify(infos));
+
+
+// });
+
+
+    
+////// multistepper
+function showStep(step) {
+  document.querySelectorAll('.step').forEach(s => s.classList.add('hidden'));
+  document.getElementById(`step-${step}`).classList.remove('hidden');
+
+  progressBar.style.width = `${(step / 8) * 100}%`;
+  for (let i = 1; i <= steps.length; i++) {
+    const stepIndicator = document.getElementById(`step${i}`);
+    if (i <= step) {
+      stepIndicator.classList.remove('opacity-50');
+    } else {
+      stepIndicator.classList.add('opacity-50');
+    }
+  }
+
+  prevBtn.classList.toggle('hidden', step === 1);
+  nextBtn.classList.toggle('hidden', step === 3);
+  submitBtn.classList.toggle('hidden', step !== 3);
+}
+
+nextBtn.addEventListener('click', () => {
+  currentStep++;
+  showStep(currentStep);
+});
+
+prevBtn.addEventListener('click', () => {
+  currentStep--;
+  showStep(currentStep);
+});
+
+
+///// form 
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let fullName=document.getElementById("fullName").value;
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let address=document.getElementById("address").value;
+let LinkedIn=document.getElementById("LinkedIn").value;
+let GitHub=document.getElementById("GitHub").value;
+let portfolio=document.getElementById("portfolio").value;
+let title=document.getElementById("titre").value;
+let textarea=document.getElementById("textarea").value;
+let hardS = document.getElementsByClassName("hardS").value;
+
+let stepThreeInfo = [];
+
+const hardSkillsDiv = document.getElementById("hardSkillsDiv").getElementsByTagName('input');
+
+Array.from(hardSkillsDiv).forEach((item) => stepThreeInfo.push(item.value));
+
+
+console.log(stepThreeInfo);
+
+
+  const cvBuilderinfo = 
+  {
+    fullName,
+    email,
+    phone,
+    address,
+    LinkedIn,
+    GitHub,
+    portfolio,
+    title,
+    textarea,
+    stepThreeInfo  
+  }
+  
+  const data = JSON.parse(localStorage.getItem("data")) || [];
+  data.push(cvBuilderinfo);
+  localStorage.setItem("data",JSON.stringify(data));
+
+  Swal.fire({
+      title: 'Form submitted successfully!!',
+      icon: 'success',
+      confirmButtonText: 'Nice!'
+    });
+});
+
+showStep(currentStep);
+
+
+//////////// ajouter nouveau input dynamic form
+document.querySelectorAll('.fa-circle-plus').forEach(button => {
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
     const input = document.createElement('input');
     input.type = 'text';
-    input.classList.add('bg-gray-50', 'border', 'border-gray-300', 'text-gray-900', 'text-sm', 'rounded-lg', 'focus:ring-green-500', 'focus:border-green-500', 'block', 'w-full', 'p-2.5');
+    input.classList.add('hardS','bg-gray-50', 'border', 'border-gray-300', 'text-gray-900', 'text-sm', 'rounded-lg', 'focus:ring-green-500', 'focus:border-green-500', 'block', 'w-full', 'p-2.5');
     this.parentElement.parentElement.appendChild(input);
   });
 });
+  
+  
+  
+function displayCv(){
+  const data = JSON.parse(localStorage.getItem("data")) || [];
+  let liba =document.getElementById("liba");
+  data.forEach((dt,index)=>{
 
+    liba.innerHTML = `
+    
+    
+    
+    
+    
+    `;
+  })
+}
   </script>
+
+
+
+
+  <!-- <script src="/asset/scripts/script.js"></script> -->
 </body>
 
 </html>
