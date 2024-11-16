@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.liba{
+    width: 794px;
+    margin: 0 auto;
+}
