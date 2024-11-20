@@ -13,7 +13,7 @@
     integrity="sha512-MpDFIChbcXl2QgipQrt1VcPHMldRILetapBl5MPCA9Y8r7qvlwx1/Mc9hNTzY+kS5kX6PdoDq41ws1HiVNLdZA=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <title>Document</title>
-</head> 
+</head>
 
 <body style="background: rgb(239, 239, 239);">
 
@@ -21,14 +21,14 @@
     <h1 class="text-2xl text-white"><a href="../index.html">Build Your CV</a></h1>
   </header>
 
-  <main class="flex justify-start items-start">
-    <div class="liba bg-slate-400 shadow-lg w-1/2 h-full" style="max-height: 90vh; overflow-y: auto;" id="liba">
-      <div id="cvVersion1"></div>
+  <main class="flex justify-center items-start">
+    <div class="liba" id="liba" >
+      <div id="cvVersion1" class="" ></div>
     </div>
-    <div id="formSteppers" class="w-1/2 min-h-screen flex items-start justify-center"
+    <div id="formSteppers" class="w-1/2 min-h-screen flex items-start justify-center "
       style="width: 27rem; max-height: 90vh;overflow-y: auto;">
-      <div class="container mx-auto p-4 overflow-scroll h-screen relative bg-black rounded-lg shadow ">
-        <div class="bg-white rounded-lg overflow-scroll shadow-lg p-6 md:p-10 w-100 mx-auto">
+      <div class="container mx-auto p-4 h-screen relative bg-black rounded-lg shadow ">
+        <div class="bg-white rounded-lg shadow-lg p-6 md:p-10 w-100 mx-auto">
           <h1 class="text-3xl font-bold text-center mb-8">CV Builder Steps</h1>
 
           <!-- Progress Bar -->
@@ -81,9 +81,28 @@
             <div id="step-1"
               class="step animate__animated animate__backInRight flex flex-col justify-center p-5 bg-white rounded-lg">
               <!-- Profile Image Upload -->
-              <div class="relative w-full mb-8">
-                <label for="img" class="block mb-2 text-sm font-medium text-gray-900">Upload Profile Image</label>
-                <input type="file" id="profileImage" accept="image/*">
+              <div class="relative w-full mb-8 border p-1 rounded-lg">
+                <label for="profileImage" class="block mb-3 text-sm font-medium text-gray-900">
+                  Upload Profile Image
+                </label>
+                <div class="flex items-center justify-center w-full">
+                  <label for="profileImage"
+                    class="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 border-gray-300 hover:border-green-500 transition-colors">
+                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                      <svg aria-hidden="true" class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M7 16a4 4 0 01-4-4 4 4 0 014-4m10 8a4 4 0 01-4-4 4 4 0 014-4m-6 4h.01M4 12h16m-6 0h.01M8 20h8m-4 0v-4">
+                        </path>
+                      </svg>
+                      <p class="mb-2 text-sm text-gray-500">
+                        <span class="font-semibold">Click to upload</span> or drag and drop
+                      </p>
+                      <p class="text-xs text-gray-500">PNG, JPG, or GIF (Max. 2MB)</p>
+                    </div>
+                    <input id="profileImage" type="file" accept="image/*" class="hidden" />
+                  </label>
+                </div>
               </div>
 
               <!-- Full Name -->
@@ -92,7 +111,7 @@
                 <input type="text" id="fullName"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   placeholder="Enter your full name" required>
-                <span id="nameError" class="hidden">Error you need </span>
+                <span id="nameError" class="text-red-500 text-sm hidden">Error you need </span>
               </div>
 
               <!-- Email Address -->
@@ -101,7 +120,7 @@
                 <input type="email" id="email"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   placeholder="example@domain.com" required>
-                <span id="emailError" class="hidden">Error you need </span>
+                <span id="emailError" class="text-red-500 text-sm hidden">Error you need </span>
               </div>
 
               <!-- Phone Number -->
@@ -110,8 +129,7 @@
                 <input type="tel" id="phone"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   placeholder="Enter your phone number" required>
-                <span id="phoneError" class="hidden">Error you need </span>
-
+                <span id="phoneError" class="text-red-500 text-sm hidden">Error you need </span>
               </div>
 
               <!-- Address -->
@@ -120,7 +138,7 @@
                 <input type="text" id="address"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   placeholder="Enter your address" required>
-                <span id="addressError" class="hidden">Error you need </span>
+                <span id="addressError" class="text-red-500 text-sm hidden">Error you need </span>
 
               </div>
 
@@ -130,7 +148,7 @@
                 <input type="url" id="LinkedIn"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   placeholder="LinkedIn profile URL" required>
-                <span id="LinkedInError" class="hidden">Error you need </span>
+                <span id="LinkedInError" class="text-red-500 text-sm hidden">Error you need </span>
 
               </div>
 
@@ -140,7 +158,7 @@
                 <input type="url" id="GitHub"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   placeholder="GitHub profile URL" required>
-                <span id="GitHubError" class="hidden">Error you need </span>
+                <span id="GitHubError" class="text-red-500 text-sm hidden">Error you need </span>
 
               </div>
 
@@ -150,7 +168,7 @@
                 <input type="url" id="portfolio"
                   class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
                   placeholder="Portfolio URL" required>
-                <span id="portfolioError" class="hidden">Error you need </span>
+                <span id="portfolioError" class="text-red-500 text-sm hidden">Error you need </span>
 
               </div>
             </div>
@@ -158,19 +176,21 @@
             <!-- Step 2: info Details -->
             <div id="step-2" class="step hidden">
               <h2 class="text-xl font-semibold text-gray-800 mb-6">info Details</h2>
+              <!-- Title Input -->
               <div class="mb-6">
-                <label for="titre" class="block mb-2 text-sm font-medium text-gray-900">titre</label>
-                <input type="text" id="titre"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                  required>
-                  <span id="titreError" class="hidden">Error you need </span>
+                <label for="titre" class="block mb-2 text-sm font-medium text-gray-700">Title</label>
+                <input type="text" id="titre" placeholder="Enter your title..."
+                  class="w-full bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 p-3 transition-shadow duration-300 hover:shadow-md"
+                  required />
+                <span id="titreError" class="text-red-500 text-sm hidden mt-1">Please provide a title.</span>
               </div>
               <div class="mb-6">
-                <label for="textarea" class="block mb-2 text-sm font-medium text-gray-900">résumé de profil</label>
-                <textarea name="textarea"
-                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                  id="textarea" required></textarea>
-                  <span id="textareaError" class="hidden">Error you need </span>
+                <label for="textarea" class="block mb-2 text-sm font-medium text-gray-700">Profile Summary</label>
+                <textarea id="textarea" name="textarea" placeholder="Write a brief summary about yourself..."
+                  class="w-full h-32 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 p-3 transition-shadow duration-300 hover:shadow-md resize-none"
+                  required></textarea>
+                <span id="textareaError" class="text-red-500 text-sm hidden mt-1">Please provide a profile
+                  summary.</span>
               </div>
             </div>
 
@@ -187,11 +207,14 @@
                         class="mb-6 px-4 py-2 fa-circle-plus bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         + Add
                       </button>
-                      <input type="text" id="hardSkills"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                        placeholder="Enter hard skill" required>
-                        <span id="hardSkillserror" class="text-red-500 text-xs mt-1 hidden">Please enter a valid skill.</span>
+                      <div class="flex items-center gap-4 mt-2">
+                        <input type="text" id="hardSkills"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+                          placeholder="Enter hard skill" required>
+                        <span id="hardSkillsError" class="text-red-500 text-sm hidden">Please enter a valid
+                          skill.</span>
                       </div>
+                    </div>
                   </div>
                 </div>
 
@@ -204,11 +227,13 @@
                         class="mb-6 px-4 py-2 fa-circle-plus bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                         + Add
                       </button>
-                      <input type="text" id="softSkills"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                        placeholder="Enter soft skill" required>
+                      <div class="flex items-center gap-4 mt-2">
+                        <input type="text" id="softSkills"
+                          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+                          placeholder="Enter soft skill" required>
+                      </div>
                     </div>
-                    <span id="SoftSkillserror" class="text-red-500 text-xs mt-1 hidden">Please enter a valid skill.</span>
+                    <span id="softSkillsError" class="text-red-500 text-xs hidden">Please enter a valid skill.</span>
                   </div>
                 </div>
               </div>
@@ -218,39 +243,57 @@
             <div id="step-4" class="step flex flex-col justify-center items-center p-6 bg-white rounded-lg">
               <h2 class="text-xl font-semibold text-gray-800 mb-6">Langues & Loisirs</h2>
               <!-- Langues Section -->
-              <div class="languess border rounded-xl mb-6 p-4 bg-gray-50">
+              <div class="languess rounded-xl mb-6 p-2 bg-gray-50">
                 <div class="flex flex-col items-start mb-6">
                   <label for="langues" class="ml-2 text-sm font-medium text-gray-900">Langues</label>
                   <div class="flex flex-col gap-4 mt-2">
                     <button
-                      class="mb-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      class="fa-circle-plus mb-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                       + Add
                     </button>
-                    <div class="flex gap-2 mt-2">
-                      <input type="text" id="langues"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                        placeholder="Ex: Arabic, English" required>
-                        <span id="langueserror">Please enter a valid langauge</span>
-                        <input type="text" id="proficiency"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                        placeholder="Ex: Native, Intermediate, Advanced" required>
-                       <span id="levelerror">Please enter a valid level</span>
-                      </div>
+                    <div class="flex gap-2 mt-2 parentlanguage">
+                      <!-- Language Dropdown -->
+                      <select id="langues"
+                        class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+                        required>
+                        <option value="" disabled selected>Select Language</option>
+                        <option value="Arabic">Arabic</option>
+                        <option value="English">English</option>
+                        <option value="French">French</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="German">German</option>
+                      </select>
+                      <span id="languesError" class="text-red-500 text-sm hidden">Please select a valid language</span>
+
+                      <!-- Proficiency Level Dropdown -->
+                      <select id="proficiency"
+                        class="input bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+                        required>
+                        <option value="" disabled selected>Select Level</option>
+                        <option value="Native">Native</option>
+                        <option value="Fluent">Fluent</option>
+                        <option value="Intermediate">Intermediate</option>
+                      </select>
+                      <span id="levelError" class="text-red-500 text-sm hidden">Please select a valid level</span>
+                    </div>
                   </div>
                 </div>
               </div>
               <!-- Loisirs et Intérêts Section -->
-              <div class="loisirsInterets border rounded-xl p-4 bg-gray-50">
+              <div class="loisirsInterets rounded-xl bg-gray-50">
                 <div class="flex flex-col items-start mb-6">
                   <label for="loisirs" class="ml-2 text-sm font-medium text-gray-900">Loisirs et Intérêts</label>
-                  <div id="loisirsDiv" class="flex flex-col gap-4 mt-2">
+                  <div id="loisirsDiv" class="parentLoisir flex flex-col gap-4 mt-2">
                     <button
-                      class="mb-6 px-4 py-2 fa-circle-plus bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      class="fa-circle-plus mb-6 px-4 py-2 fa-circle-plus bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                       + Add
                     </button>
-                    <input type="text" id="loisirs"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
-                      placeholder="Enter a hobby or interest" required>
+                    <div class="flex items-center gap-4 mt-2">
+                      <input type="text" id="loisirs"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5"
+                        placeholder="Enter a hobby or interest" required>
+                      <span id="loisirsError" class="text-red-500 text-sm hidden">Please select a valid loisirs</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -261,7 +304,7 @@
               <h2 class="text-2xl font-semibold mb-6 text-gray-800">Formation</h2>
               <!-- Add Education Button -->
               <button id="btn"
-                class="btnAddinput mb-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                class="fa-circle-plus mb-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 + Add
               </button>
               <div id="eduction" class="parent education">
@@ -271,38 +314,38 @@
                   <input type="text" id="university" name="university"
                     placeholder="e.g., California State University East Bay" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <span id="universityerror">Please enter a valid university</span>
-                  </div>
+                  <span id="universityError" class="text-red-500 text-sm hidden">Please enter a valid university</span>
+                </div>
                 <!-- Start Year and End Year -->
                 <div class="flex space-x-4 mb-6 w-full">
                   <div class="flex-1">
                     <label for="startYear" class="block text-sm font-medium text-gray-700 mb-2">Start Year:</label>
                     <input type="date" id="startYear" name="startYear" placeholder="e.g., 2009" required
                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                      <span id="startYearerror">Please enter a valid startYear</span>
-                    </div>
+                    <span id="startYearError" class="text-red-500 text-sm hidden">Please enter a valid startYear</span>
+                  </div>
                   <div class="flex-1">
                     <label for="endYear" class="block text-sm font-medium text-gray-700 mb-2">End Year:</label>
                     <input type="date" id="endYear" name="endYear" placeholder="e.g., 2014" required
                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                      <span id="endYearerror">Please enter a valid endYear</span>
-                    </div>
+                    <span id="endYearError" class="text-red-500 text-sm hidden">Please enter a valid endYear</span>
+                  </div>
                 </div>
                 <!-- Major -->
                 <div class="w-full">
                   <label for="major" class="block text-sm font-medium text-gray-700 mb-2">Major:</label>
                   <input type="text" id="major" name="major" placeholder="e.g., Political Science" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <span id="majorerror">Please enter a valid major</span>
-                  </div>
+                  <span id="majorError" class="text-red-500 text-sm hidden">Please enter a valid major</span>
+                </div>
               </div>
             </div>
 
-            <!-- Step 7: Expériences professionnelles -->
+            <!-- Step 6: Expériences professionnelles -->
             <div id="step-6" class=" step flex-col justify-center items-center p-5 bg-white rounded-lg">
               <h2 class="text-2xl font-semibold mb-6 text-gray-800">Expériences professionnelles</h2>
               <button id="btn"
-                class="btnAddinput mb-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                class="fa-circle-plus mb-6 px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 + Add
               </button>
               <div id="Experiences" class="parentExperiences">
@@ -311,17 +354,16 @@
                   <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Nom de l'entreprise:</label>
                   <input type="text" id="company" name="company" placeholder="e.g., Cherifia Commercial Center" required
                     class="childinputExperiences w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <span id="companyerror">Please enter a valid company</span>
-                  </div>
+                  <span id="companyError" class="text-red-500 text-sm hidden">Please enter a valid company</span>
+                </div>
 
                 <!-- Position -->
                 <div class="mb-6 w-full">
                   <label for="position" class="block text-sm font-medium text-gray-700 mb-2">Poste:</label>
                   <input type="text" id="position" name="position" placeholder="e.g., Gestionnaire de stock" required
                     class="childinputExperiences w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <span id="positionerror">Please enter a valid position</span>
-
-                  </div>
+                  <span id="positionError" class="text-red-500 text-sm hidden">Please enter a valid position</span>
+                </div>
 
                 <!-- Start Date and End Date -->
                 <div class="flex space-x-4 mb-6 w-full">
@@ -329,16 +371,15 @@
                     <label for="startDate" class="block text-sm font-medium text-gray-700 mb-2">Date de début:</label>
                     <input type="date" id="startDate" name="startDate" required
                       class="childinputExperiences w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                      <span id="startDateerror">Please enter a valid startDate</span>
+                    <span id="startDateError" class="text-red-500 text-sm hidden">Please enter a valid startDate</span>
 
-                    </div>
+                  </div>
                   <div class="flex-1">
                     <label for="endDate" class="block text-sm font-medium text-gray-700 mb-2">Date de fin:</label>
                     <input type="date" id="endDate" name="endDate" required
                       class="childinputExperiences w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                      <span id="endDateerror">Please enter a valid endDate</span>
-
-                    </div>
+                    <span id="endDateError" class="text-red-500 text-sm hidden">Please enter a valid endDate</span>
+                  </div>
                 </div>
 
                 <!-- Location -->
@@ -346,9 +387,8 @@
                   <label for="location" class="block text-sm font-medium text-gray-700 mb-2">Lieu:</label>
                   <input type="text" id="location" name="location" placeholder="e.g., Casablanca, Maroc" required
                     class="childinputExperiences w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <span id="locationerror">Please enter a valid location</span>
-
-                  </div>
+                  <span id="locationError" class="text-red-500 text-sm hidden">Please enter a valid location</span>
+                </div>
 
                 <!-- Job Description -->
                 <div class="mb-6 w-full">
@@ -357,12 +397,13 @@
                   <textarea id="description" name="description"
                     placeholder="Décrivez les responsabilités et les réalisations..." rows="4" required
                     class="childinputExperiences w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                    <span id="Jobdescriptionerror">Please enter a valid description</span>
-                  </div>
+                  <span id="JobdescriptionError" class="text-red-500 text-sm hidden">Please enter a valid
+                    description</span>
+                </div>
               </div>
             </div>
 
-            <!-- Step 8: Certifications -->
+            <!-- Step 7: Certifications -->
             <div id="step-7" class="step hidden">
               <h2 class="text-xl font-semibold text-gray-800 mb-6">Certifications</h2>
 
@@ -371,28 +412,31 @@
                   <label for="Certifications" class="ml-2 text-sm font-medium text-gray-900">Certifications</label>
                   <div class="flex-col gap-40 ">
                     <button
-                      class="mb-6 px-4 py-2 fa-circle-plus bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      class="fa-circle-plus mb-6 px-4 py-2 fa-circle-plus bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
                       + Add
                     </button>
-                    <input type="url" id="Certifications"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
-                      required>
-                      <span id="Certificationserror">Please enter a valid Certifications</span>
+                    <div class="flex items-center gap-4 mt-2">
+                      <input type="url" id="Certifications"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full  p-2.5"
+                        required>
+                      <span id="CertificationsError" class="text-red-500 text-sm hidden">Please enter a valid
+                        Certifications</span>
                     </div>
+
+                  </div>
                 </div>
               </div>
             </div>
-
 
             <div class="flex justify-between mt-8">
               <button type="button" id="prevBtn"
                 class="px-4 py-2 bg-gray-300 text-gray-800 rounded-lg hover:bg-gray-400 focus:outline-none focus:shadow-outline none">Previous</button>
               <button type="button" id="nextBtn"
-                class="px-4 py-2 bg-green-500 hidden text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline">Next</button>
+                class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline">Next</button>
               <button type="submit" id="submitBtn"
                 class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline hidden">Submit</button>
               <button type="button" id="btndwlond"
-                class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline">cv</button>
+                class="px-4 py-2 bg-gray-900 hidden text-white rounded-lg hover:bg-green-600 focus:outline-none focus:shadow-outline">Downlond_Cv</button>
             </div>
 
           </form>
@@ -402,413 +446,12 @@
   </main>
 
   <script>
-/////////// add image to the local storage /////////
+   </script>
 
-document.addEventListener('DOMContentLoaded', (event) => {
-        const profileImageInput = document.getElementById("profileImage");
-        let profileImageData = "";
-
-        profileImageInput.addEventListener("change", (event) => {
-            const file = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onload = () => {
-                profileImageData = reader.result; // Store image data as a Base64 string
-                localStorage.setItem("profileImage", profileImageData); // Save it to local storage
-            };
-
-            if (file) {
-                reader.readAsDataURL(file); // Read the file
-            }
-        });
-
-/////////// add image to the local storage /////////
-
-        ///// downloadPdf
-        let btndwlond = document.getElementById("btndwlond");
-        let cvVersion1 = document.getElementById("cvVersion1");
-        btndwlond.addEventListener("click", async function () {
-            const filename = "my-cv.pdf";
-
-            const options = {
-                margin: 0,
-                filename: filename,
-                // image: { type: "jpeg", quality: 0.98 },
-                html2canvas: { scale: 3 },
-                jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
-            };
-            try {
-                await html2pdf().set(options).from(cvVersion1).save();
-            } catch (error) {
-                console.error("false:", error.message);
-            }
-        });
-
-
-        
-
-        //// add formation inputs
-        const parentinput = document.querySelector(".parent");
-        const parentExperiences = document.querySelector(".parentExperiences");
-        // const btn = document.getElementById("btn")
-        document.getElementsByClassName("btnAddinput").forEach(btn =>
-            btn.addEventListener("click", function () {
-                let clonedivFormation = parentinput.cloneNode(true);
-                let clonedivexperince = parentExperiences.cloneNode(true);
-
-                // inputNew.value="";
-                let removebtn = document.createElement("button");
-                removebtn.textContent = "supp";
-                removebtn.className = 'removebtn';
-                clonedivFormation.appendChild(removebtn);
-                clonedivexperince.appendChild(removebtn);
-                // const educationParent = document.getElementById("step-5")
-                // const ExperiencesParent = document.getElementById("step-6")
-
-                this.parentElement.appendChild(clonedivFormation);
-                this.parentElement.appendChild(clonedivexperince);
-
-                removebtn.addEventListener("click", () => {
-                    clonedivFormation.remove();
-                    clonedivexperince.remove();
-                });
-            })
-        );
-        //// add formation inputs
-
-        ///// form a
-        form.addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            let stepThreeInfo = [];
-            let stepThreeSoftSkills = [];
-            let loisirs = [];
-
-            let fullName = document.getElementById("fullName").value;
-            let email = document.getElementById("email").value;
-            let phone = document.getElementById("phone").value;
-            let address = document.getElementById("address").value;
-            let LinkedIn = document.getElementById("LinkedIn").value;
-            let GitHub = document.getElementById("GitHub").value;
-            let portfolio = document.getElementById("portfolio").value;
-            let title = document.getElementById("titre").value;
-            let textarea = document.getElementById("textarea").value;
-            let Certifcation =document.getElementById("Certifications").value;
-
-            /// step : HardSkills,SoftSkills3
-            const hardSkillsDiv = document.getElementById("hardSkillsDiv").getElementsByTagName('input');
-            Array.from(hardSkillsDiv).forEach((item) => stepThreeInfo.push(item.value));
-
-            const SoftSkillsDiv = document.getElementById("SoftSkillsDiv").getElementsByTagName('input');
-            Array.from(SoftSkillsDiv).forEach((item) => stepThreeSoftSkills.push(item.value));
-            /// end step 3
-
-            /// step : loisirs
-            const loisirsSection = document.getElementById("loisirs").getElementsByTagName('input');
-            Array.from(loisirsSection).forEach((item) => loisirs.push(item.value));
-
-            /// step : formations
-            let formations = [];
-            let educationDiv = document.getElementsByClassName("education");
-            educationDiv.forEach(formation => {
-                let inputFormation = formation.getElementsByTagName("input");
-
-                let inputsFormations = {
-                    schoole: inputFormation[0].value,
-                    Staryear1: inputFormation[1].value,
-                    Endyear2: inputFormation[2].value,
-                    major: inputFormation[3].value
-                };
-                formations.push(inputsFormations);
-            });
-
-            ///Experiences
-            let Experiences = [];
-            let getExperiences = document.getElementsByClassName("parentExperiences");
-            Array.from(getExperiences).forEach(experience => {
-                let inputExperiences = experience.getElementsByClassName("childinputExperiences");
-
-                let objetExperience = {
-                    nomEntreprise: inputExperiences[0].value,
-                    Poste: inputExperiences[1].value,
-                    StarDate: inputExperiences[2].value,
-                    EndDate: inputExperiences[3].value,
-                    location: inputExperiences[4].value,
-                    description: inputExperiences[5].value,
-                };
-                Experiences.push(objetExperience);
-            });
-
-            ///////// objet cv Builder
-            const cvBuilderinfo = {
-                fullName,
-                email,
-                phone,
-                address,
-                LinkedIn,
-                GitHub,
-                portfolio,
-                title,
-                textarea,
-                stepThreeInfo,
-                stepThreeSoftSkills,
-                loisirs,
-                formations,
-                Experiences,
-                profileImage: profileImageData, 
-                Certifcation
-              };
-
-            const data = [];
-            data.push(cvBuilderinfo);
-
-            localStorage.setItem("data", JSON.stringify(data));
-
-            Swal.fire({
-                title: 'Form submitted successfully!!',
-                icon: 'success',
-                confirmButtonText: 'Nice!'
-            });
-            displayCv();
-        });
-
-        showStep(currentStep);
-
-        //////////// ajouter nouveau input dynamic form
-        document.querySelectorAll('.fa-circle-plus').forEach(button => {
-            button.addEventListener('click', function (e) {
-                e.preventDefault();
-                // let hardSkillsDiv=document.getElementById("hardSkillsDiv");
-                const input = document.createElement('input');
-                input.type = 'text';
-                input.classList.add('hardS', 'bg-gray-50', 'border', 'border-gray-300', 'text-gray-900', 'text-sm', 'rounded-lg', 'focus:ring-green-500', 'focus:border-green-500', 'block', 'w-full', 'p-2.5');
-                this.parentElement.parentElement.appendChild(input);
-            });
-        });
-
-        window.onload = displayCv();
-
-        function displayCv() {
-            const data = JSON.parse(localStorage.getItem("data")) || [];
-            let cvVersion1 = document.getElementById("cvVersion1");
-
-            if (cvVersion1) {
-                data.forEach(dt => {
-                    let formationsHTML = "";
-                    let ExperiencesHTML = "";
-
-                    dt.formations.forEach(frm => {
-                        formationsHTML += `
-                            <section class="mt-4 border-b-2 break-inside-avoid pb-4">
-                                <header class="mb-4">
-                                    <h3 class="text-xl font-semibold text-gray-700 leading-snug">${frm.schoole}</h3>
-                                    <p class="text-gray-600 text-lg">
-                                        Start Year: <span class="font-medium">${frm.Staryear1}</span> –
-                                        End Year: <span class="font-medium">${frm.Endyear2}</span>
-                                    </p>
-                                    <ul class="list-disc list-inside text-gray-800 text-lg pl-6">
-                                        <li>
-                                            <span class="font-semibold">Major:</span> ${frm.major}
-                                        </li>
-                                    </ul>
-                                </header>
-                            </section>
-                        `;
-                    });
-
-                    dt.Experiences.forEach(expo => {
-                        ExperiencesHTML += `
-                            <header>
-                                <h3 class="font-semibold text-gray-800 text-md leading-snugish">
-                                    ${expo.nomEntreprise}-${expo.location}
-                                </h3>
-                                <p class="text-sm leading-normal text-gray-500">
-                                    ${expo.StarDate} &ndash; ${expo.EndDate} | Freelance ${expo.Poste}
-                                </p>
-                            </header>
-                            <ul class="pl-3 mt-2 font-normal text-gray-700 text-md leading-snugish">
-                                <li>
-                                    <span class="text-gray-500 transform -translate-y-px select-none">
-                                        &rsaquo;
-                                    </span>
-                                    ${expo.description}Created high-quality, customized web applications from scratch, employing a diverse set of programming languages, including HTML, CSS, JavaScript, PHP, and Python, to fulfill unique client requirements.
-                                </li>
-                            </ul>
-                        `;
-                    });
-
-                    cvVersion1.innerHTML = `
-                        <main id="cvDesigner" class="font-jost hyphens-manual" style="padding-left:2rem;">
-                            <!-- Page -------------------------------------------------------------------------------------------------------->
-                            <section class="p-3 my-auto mx-auto max-w-3xl bg-white rounded-2xl border-2 border-gray-700 sm:p-9 md:p-16 lg:mt-6 print:border-0 page print:max-w-letter print:max-h-letter print:mx-0 print:my-o xsm:p-8 print:bg-white md:max-w-letter md:h-letter lg:h-letter">
-                                <!-- Name ---------------------------------------------------------------------------------------------------->
-                                <header class="inline-flex justify-between items-center mb-6 w-full align-top border-b-4 border-gray-300" style="margin-bottom:2rem">
-                                    <section class="block">
-                                        <img src="${dt.profileImage}" alt="Profile Picture" style="width: 130px; height: 130px; border-radius: 50%;">
-                                    </section>
-                                    <section class="block">
-                                        <h1 class="mb-0 text-3xl font-bold text-gray-700">
-                                            ${dt.fullName}
-                                        </h1>
-                                        <!--Job Title--------------------------------------------------------------------------------------------------------->
-                                        <h2 class="m-0 ml-2 text-2xl font-semibold text-gray-700 leading-snugish">
-                                            ${dt.title}
-                                        </h2>
-                                        <h4 class="m-0 ml-2 text-2xl font-semibold text-gray-700 leading-snugish">
-                                            ${dt.email}
-                                        </h4>
-                                        <h4 class="m-0 ml-2 text-2xl font-semibold text-gray-700 leading-snugish">
-                                            ${dt.phone}
-                                        </h4>
-                                    </section>
-                                    <!--   Initials Block   -->
-                                </header>
-
-                                <!-- Column -------------------------------------------------------------------------------------------------->
-                                <section class="col-gap-8 print:col-count-2 print:h-letter-col-full col-fill-balance md:col-count-2 md:h-letter-col-full">
-                                    <section class="flex-col">
-                                        <!-- Contact Information ------------------------------------------------------------------------------------->
-                                        <section class="pb-2 mt-4 mb-0 first:mt-0">
-                                            <!-- To keep in the same column -------------------------------------------------------------------------->
-                                            <section class="break-inside-avoid">
-                                                <section class="pb-4 mb-2 border-b-4 border-gray-300 break-inside-avoid">
-                                                    <ul class="pr-7 list-inside">
-                                                        
-                                                        <li class="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md">
-                                                            <a href="">
-                                                                <span class="mr-5 text-lg font-semibold text-gray-700 leading-snugish">
-                                                                    Address:${dt.address}
-                                                                </span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="mt-1 leading-normal text-black text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md print:">
-                                                            <a href="${dt.portfolio}" class="group">
-                                                                <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
-                                                                    Portfolio : ${dt.portfolio}
-                                                                </span>
-                                                            </a>
-                                                        </li>
-                                                        <li class="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md">
-                                                            <a href="${dt.GitHub}" class="group">
-                                                                <span class="mr-5 text-lg font-semibold text-gray-700 leading-snugish">
-                                                                    Github: ${dt.GitHub}
-                                                                </span>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </section>
-                                            </section>
-                                        </section>
-
-                                        <!--Summary ---------------------------------------------------------------------------------------------------------->
-                                        <section class="pb-2 pb-4 mt-0 border-b-4 border-gray-300 first:mt-0">
-                                            <!-- To keep in the same column -->
-                                            <section class="break-inside-avoid">
-                                                <h2 class="mb-2 text-xl font-bold tracking-widest text-gray-700 print:font-normal">
-                                                    SUMMARY
-                                                </h2>
-                                                <section class="mb-2 break-inside-avoid">
-                                                    <p class="mt-2 leading-normal text-gray-700 text-md">
-                                                        ${dt.textarea}
-                                                        Experienced full-stack web developer with a strong track record of independently addressing complex business requirements and overcoming challenges to deliver polished and user-friendly web solutions.
-                                                    </p>
-                                                </section>
-                                            </section>
-                                        </section>
-
-                                        <!--Education -------------------------------------------------------------------------------------------------------->
-                                        <section class="pb-0 mt-2 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                            <section class="break-inside-avoid">
-                                                <h2 class="mb-2 text-lg font-bold tracking-widest text-gray-700 print:font-normal">
-                                                    EDUCATION
-                                                </h2>
-                                                <section class="mt-2 border-b-2 break-inside-avoid">
-                                                    <header>
-                                                        <section class="pb-0 mt-2 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                                            ${formationsHTML}
-                                                        </section>
-                                                    </header>
-                                                </section>
-                                            </section>
-
-                                            <!--Begin HardSkills ----------------------------------------------------------------------------------------------------->
-                                            <section class="pb-6 mt-0 mb-4 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                                <section class="break-inside-avoid">
-                                                    <h2 class="mb-2 text-lg font-bold tracking-widest text-gray-700 print:font-normal">
-                                                        HardSkills
-                                                    </h2>
-                                                    <section class="mb-0 break-inside-avoid">
-                                                        <section class="mt-1 last:pb-1">
-                                                            <ul class="flex flex-wrap -mb-1 font-bold leading-relaxed text-md -mr-1.6">
-                                                                ${dt.stepThreeInfo.map(item => `<li>${item}</li>`).join(",")}
-                                                            </ul>
-                                                        </section>
-                                                    </section>
-                                                </section>
-                                            </section>
-
-                                            <!--Begin SoftSkills ----------------------------------------------------------------------------------------------------->
-                                            <section class="pb-6 mt-0 mb-4 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                                <section class="break-inside-avoid">
-                                                    <h2 class="mb-2 text-lg font-bold tracking-widest text-gray-700 print:font-normal">
-                                                        SoftSkills
-                                                    </h2>
-                                                    <ul>
-                                                        ${dt.stepThreeSoftSkills.map(item => `<li>${item}</li>`).join(",")}
-                                                    </ul>
-                                                </section>
-                                            </section>
-
-                                            <!--Education -------------------------------------------------------------------------------------------------------->
-                                            <section class="pb-0 mt-2 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                                <section class="break-inside-avoid">
-                                                    <h2 class="mb-2 text-lg font-bold tracking-widest text-gray-700 print:font-normal">
-                                                        EDUCATION
-                                                    </h2>
-                                                    <section class="mt-2 border-b-2 break-inside-avoid">
-                                                        <header>
-                                                            <section class="pb-0 mt-2 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                                                ${ExperiencesHTML}
-                                                            </section>
-                                                        </header>
-                                                    </section>
-                                                </section>
-                                                <!--Certifcation -------------------------------------------------------------------------------------------------------->
-                                                <section class="pb-0 mt-2 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                                    <section class="break-inside-avoid">
-                                                        <h2 class="mb-2 text-lg font-bold tracking-widest text-gray-700 print:font-normal">
-                                                            Certifcation
-                                                        </h2>
-                                                        <section class="mt-2 border-b-2 break-inside-avoid">
-                                                            <header>
-                                                                <section class="pb-0 mt-2 border-b-4 border-gray-300 first:mt-0 break-inside-avoid">
-                                                                   <a href="${dt.Certifcation}" class="group">
-                                                                <span class="mr-2 text-lg font-semibold text-gray-700 leading-snugish">
-                                                                    Portfolio : ${dt.Certifcation}
-                                                                </span>
-                                                            </a>
-                                                                </section>
-                                                            </header>
-                                                        </section>
-                                                    </section>
-                                                </section>
-                                            </section>
-                                        </section>
-                                    </section>
-                                </section>
-                            </section>
-                        </main>
-                    `;
-                });
-            } else {
-                console.error("Element with id 'cvVersion1' not found.");
-            }
-        }
-    });
-</script>
-  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+  <script src="../asset/scripts/app.js"></script>
   <script src="../asset/scripts/script.js"></script>
+
 </body>
 
 </html>
